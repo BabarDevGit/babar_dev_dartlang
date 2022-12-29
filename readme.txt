@@ -1,1 +1,1 @@
-Hello from Babar Hussain, this repo is about to master dart lang
+Hello everyone, this repo is about to mastering dart lang
