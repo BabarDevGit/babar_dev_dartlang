@@ -3,7 +3,6 @@ class Employee {
   String? _email;
   int? _age;
 
-
   Employee();
 
   Employee.da(this._name, this._email, this._age);
@@ -15,15 +14,15 @@ class Employee {
     return 'Employee{_name: $_name, _email: $_email, _age: $_age}';
   }
 
-  String get name => _name!;
-
-  set name(String value) {
-    _name = value;
-  }
+  String get name =>  _name!;
 
   String get email => _email!;
 
   int get age => _age!;
+
+  set name(String value) {
+    _name = value;
+  }
 
   set age(int value) {
     _age = value;
@@ -34,6 +33,6 @@ class Employee {
   }
 }
 
-void main(){
-  print(Employee.da("James","james@gmail.com",34));
+void main() {
+  print(Employee.da("James", "james@gmail.com", 34));
 }

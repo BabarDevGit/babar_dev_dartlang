@@ -22,7 +22,7 @@ class Animal {
     legs = json['legs'];
   }
 
-  Animal.fromJSON_String(String jsonStr) {
+  Animal.fromJSONString(String jsonStr) {
     Map<String, dynamic> json = jsonDecode(jsonStr);
     name = json['name'];
     life = json['life'];
@@ -54,6 +54,6 @@ void main() {
   };
   var animal = Animal.fromJSON(data);
   print(animal);
-  animal = Animal.fromJSON_String(jsonEncode(data));
+  animal = Animal.fromJSONString(jsonEncode(data));
   print(animal);
 }

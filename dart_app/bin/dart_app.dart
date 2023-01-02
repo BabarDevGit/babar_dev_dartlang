@@ -5,6 +5,8 @@ import 'dart:ffi';
 import 'package:dart_app/dart_app.dart' as dart_app;
 import 'dart:io';
 import 'package:dart_app/dart_app.dart' as dart_app;
+import 'package:dart_app/models/Employee.dart';
+import 'package:dart_app/models1/Manager.dart';
 
 void main(List<String> arguments) {
   // //print('Hello world: ${dart_app.calculate()}!');
@@ -266,7 +268,7 @@ void main(List<String> arguments) {
   // map1.forEach((key, value) { print("$key : $value");});
   //
 
-  print(map1);
+  // print(map1);
   // map1.removeWhere((key, value) => key =="name");
   var filt = map1.keys.toList().where((element) => element.startsWith("n"));
   // print(map1);
@@ -278,14 +280,14 @@ void main(List<String> arguments) {
     "Noor",
     "Zara",
   ];
-  print(list);
+  // print(list);
   var set = list.toSet();
-  print(set);
+  // print(set);
   list.add("Fri");
   list.add("Sat");
   list.add("Sun");
   list.add("Tue");
-  print(list);
+  // print(list);
   // var fil = list.where((element) => element.toLowerCase().startsWith(""));
   // print(fil);
 
@@ -296,9 +298,120 @@ void main(List<String> arguments) {
     {"name": "Noor", "phone": "034245658", "city": "KARACHI"},
   ];
 
-  var add1 = address.where((e) => e["phone"]?.toLowerCase().startsWith("034") as bool).toList();
-  print(add1);
+  // var add1 = address.where((e) => e["phone"]?.toLowerCase().startsWith("034") as bool).toList();
+  // print(add1);
 
+  int? a11 = null; // = null
+  a11 ??= 3;
+  // print(a11); // <-- Prints 3.
+
+  // a11 ??= 5;
+  // int? b = null;
+  // b = b ?? a11;
+  // print(a11); // <-- Still prints 3.
+  // print(b); // <-- Still prints 3.
+  Map obj = {
+    "name": "Babar Hussain",
+    "phone": "03133971663",
+    "city": "KARACHI"
+  };
+
+  // var var1 = obj.name?.;
+  // print(var1);
+
+  AB a44 = AB(3434, 34, "asdfasf");
+
+// Employee employee  = Employee();
+// print(employee.);
+
+  Manager manager = Manager();
+
+  manager.name = "James Hog";
+
+// print(manager);
+
+  Student s1 = Student(1, "John");
+  s1.display();
+  Student s2 = Student(2, "Smith");
+  s2.display();
+}
+
+class AB {
+  final int a;
+  final int b;
+  final String c;
+
+  @override
+  String toString() {
+    return 'AB{a: $a, b: $b, c: $c}';
+  }
+
+  const AB(this.a, this.b, this.c);
+}
+
+class Student {
+  int id;
+  String name;
+  static String schoolName = "ABC School";
+
+  Student(this.id, this.name);
+
+  void display() {
+    print("Id: $id");
+    print("Name: $name");
+    print("School Name: $schoolName");
+  }
+}
+
+abstract class Abs1 {
+  void show();
+  int perc();
+  double amount();
+  void test(){
+  }
+  Abi(){
+  }
+}
+
+abstract class Abs2{
+  void show();
+  Abs1 obj();
+}
+class Breaker implements Abs1, Abs2{
+  @override
+  Abi() {
+    // TODO: implement Abi
+    throw UnimplementedError();
+  }
+
+  @override
+  double amount() {
+    // TODO: implement amount
+    throw UnimplementedError();
+  }
+
+  @override
+  Abs1 obj() {
+    // TODO: implement obj
+    throw UnimplementedError();
+  }
+
+  @override
+  int perc() {
+    // TODO: implement perc
+    throw UnimplementedError();
+  }
+
+  @override
+  void show() {
+    // super
+    // TODO: implement show
+  }
+
+  @override
+  void test() {
+    // TODO: implement test
+  }
 }
 
 enum Errors { e_404, e505, e_403 }
